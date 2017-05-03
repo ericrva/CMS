@@ -1,0 +1,156 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="WebChurchManagementDBModelStoreContainer" CdmEntityContainer="WebChurchManagementDBEntities">
+    <EntitySetMapping Name="Agendas">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Agendas">
+        <MappingFragment StoreEntitySet="Agendas">
+          <ScalarProperty Name="Id_Agenda" ColumnName="Id_Agenda" />
+          <ScalarProperty Name="Id_Deptos" ColumnName="Id_Deptos" />
+          <ScalarProperty Name="Dt_Agenda" ColumnName="Dt_Agenda" />
+          <ScalarProperty Name="Evento" ColumnName="Evento" />
+          <ScalarProperty Name="Desc_Agenda" ColumnName="Desc_Agenda" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Cargos">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Cargos">
+        <MappingFragment StoreEntitySet="Cargos">
+          <ScalarProperty Name="Id_Cargo" ColumnName="Id_Cargo" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Departamentos">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Departamentos">
+        <MappingFragment StoreEntitySet="Departamentos">
+          <ScalarProperty Name="Id_Deptos" ColumnName="Id_Deptos" />
+          <ScalarProperty Name="Nm_Deptos" ColumnName="Nm_Deptos" />
+          <ScalarProperty Name="Principal" ColumnName="Principal" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Disciplinas">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Disciplinas">
+        <MappingFragment StoreEntitySet="Disciplinas">
+          <ScalarProperty Name="Id_Disc" ColumnName="Id_Disc" />
+          <ScalarProperty Name="Id_Memb" ColumnName="Id_Memb" />
+          <ScalarProperty Name="Motivo" ColumnName="Motivo" />
+          <ScalarProperty Name="Dt_Ini" ColumnName="Dt_Ini" />
+          <ScalarProperty Name="Dt_Fim" ColumnName="Dt_Fim" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Dizimos">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Dizimos">
+        <MappingFragment StoreEntitySet="Dizimos">
+          <ScalarProperty Name="Id_Dizimo" ColumnName="Id_Dizimo" />
+          <ScalarProperty Name="Id_Memb" ColumnName="Id_Memb" />
+          <ScalarProperty Name="Mes_Ref" ColumnName="Mes_Ref" />
+          <ScalarProperty Name="Dt_Mov" ColumnName="Dt_Mov" />
+          <ScalarProperty Name="Vl_Dizimo" ColumnName="Vl_Dizimo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Lancamentos">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Lancamentos">
+        <MappingFragment StoreEntitySet="Lancamentos">
+          <ScalarProperty Name="Id_Lanc" ColumnName="Id_Lanc" />
+          <ScalarProperty Name="Id_Deptos" ColumnName="Id_Deptos" />
+          <ScalarProperty Name="Id_Deptos_Receber" ColumnName="Id_Deptos_Receber" />
+          <ScalarProperty Name="Id_Tp_Lanc" ColumnName="Id_Tp_Lanc" />
+          <ScalarProperty Name="Tpo_Mov" ColumnName="Tpo_Mov" />
+          <ScalarProperty Name="Tpo_pag" ColumnName="Tpo_pag" />
+          <ScalarProperty Name="Vl_Lanc" ColumnName="Vl_Lanc" />
+          <ScalarProperty Name="Desc_Lanc" ColumnName="Desc_Lanc" />
+          <ScalarProperty Name="Qtd_Parc_Lanc" ColumnName="Qtd_Parc_Lanc" />
+          <ScalarProperty Name="Dt_Lanc" ColumnName="Dt_Lanc" />
+          <ScalarProperty Name="Dt_Mov" ColumnName="Dt_Mov" />
+          <ScalarProperty Name="Dt_Venc" ColumnName="Dt_Venc" />
+          <ScalarProperty Name="Obs" ColumnName="Obs" />
+          <ScalarProperty Name="Faturado" ColumnName="Faturado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memb_Depto">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Memb_Depto">
+        <MappingFragment StoreEntitySet="Memb_Depto">
+          <ScalarProperty Name="Id_Memb" ColumnName="Id_Memb" />
+          <ScalarProperty Name="Id_Deptos" ColumnName="Id_Deptos" />
+          <ScalarProperty Name="Dt_Ini" ColumnName="Dt_Ini" />
+          <ScalarProperty Name="Dt_Fim" ColumnName="Dt_Fim" />
+          <ScalarProperty Name="Lider" ColumnName="Lider" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Memb_Familiares">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Memb_Familiares">
+        <MappingFragment StoreEntitySet="Memb_Familiares">
+          <ScalarProperty Name="Id_Memb" ColumnName="Id_Memb" />
+          <ScalarProperty Name="Id_Memb_Familiar" ColumnName="Id_Memb_Familiar" />
+          <ScalarProperty Name="Parentesco" ColumnName="Parentesco" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Membros">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Membros">
+        <MappingFragment StoreEntitySet="Membros">
+          <ScalarProperty Name="Id_Membros" ColumnName="Id_Membros" />
+          <ScalarProperty Name="Id_Cargo" ColumnName="Id_Cargo" />
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Mae" ColumnName="Mae" />
+          <ScalarProperty Name="Pai" ColumnName="Pai" />
+          <ScalarProperty Name="Sexo" ColumnName="Sexo" />
+          <ScalarProperty Name="Matricula" ColumnName="Matricula" />
+          <ScalarProperty Name="Dt_Nasc" ColumnName="Dt_Nasc" />
+          <ScalarProperty Name="Dt_Desde" ColumnName="Dt_Desde" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Tel1" ColumnName="Tel1" />
+          <ScalarProperty Name="Tel2" ColumnName="Tel2" />
+          <ScalarProperty Name="Tel3" ColumnName="Tel3" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Rua" ColumnName="Rua" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Uf" ColumnName="Uf" />
+          <ScalarProperty Name="N_Casa" ColumnName="N_Casa" />
+          <ScalarProperty Name="Foto" ColumnName="Foto" />
+          <ScalarProperty Name="Obs" ColumnName="Obs" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Status">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Status">
+        <MappingFragment StoreEntitySet="Status">
+          <ScalarProperty Name="Id_Status" ColumnName="Id_Status" />
+          <ScalarProperty Name="Nm_Status" ColumnName="Nm_Status" />
+          <ScalarProperty Name="Desc_Status" ColumnName="Desc_Status" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Tipos_Lancamentos">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Tipos_Lancamentos">
+        <MappingFragment StoreEntitySet="Tipos_Lancamentos">
+          <ScalarProperty Name="Id_Tpo_Lanc" ColumnName="Id_Tpo_Lanc" />
+          <ScalarProperty Name="Desc_Lanc" ColumnName="Desc_Lanc" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Visitantes">
+      <EntityTypeMapping TypeName="WebChurchManagementDBModel.Visitantes">
+        <MappingFragment StoreEntitySet="Visitantes">
+          <ScalarProperty Name="Id_Visit" ColumnName="Id_Visit" />
+          <ScalarProperty Name="Nm_Visit" ColumnName="Nm_Visit" />
+          <ScalarProperty Name="Dt_Nasc" ColumnName="Dt_Nasc" />
+          <ScalarProperty Name="Tel" ColumnName="Tel" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

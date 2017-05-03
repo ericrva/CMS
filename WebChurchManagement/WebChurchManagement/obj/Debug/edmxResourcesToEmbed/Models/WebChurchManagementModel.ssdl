@@ -1,0 +1,351 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="WebChurchManagementDBModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Agendas">
+    <Key>
+      <PropertyRef Name="Id_Agenda" />
+    </Key>
+    <Property Name="Id_Agenda" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Deptos" Type="int" Nullable="false" />
+    <Property Name="Dt_Agenda" Type="datetime" Nullable="false" />
+    <Property Name="Evento" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Desc_Agenda" Type="varchar" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="Cargos">
+    <Key>
+      <PropertyRef Name="Id_Cargo" />
+    </Key>
+    <Property Name="Id_Cargo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Departamentos">
+    <Key>
+      <PropertyRef Name="Id_Deptos" />
+    </Key>
+    <Property Name="Id_Deptos" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nm_Deptos" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Principal" Type="bit" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Disciplinas">
+    <Key>
+      <PropertyRef Name="Id_Disc" />
+    </Key>
+    <Property Name="Id_Disc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Memb" Type="int" />
+    <Property Name="Motivo" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dt_Ini" Type="datetime" Nullable="false" />
+    <Property Name="Dt_Fim" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Dizimos">
+    <Key>
+      <PropertyRef Name="Id_Dizimo" />
+    </Key>
+    <Property Name="Id_Dizimo" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Id_Memb" Type="int" Nullable="false" />
+    <Property Name="Mes_Ref" Type="date" Nullable="false" />
+    <Property Name="Dt_Mov" Type="datetime" Nullable="false" />
+    <Property Name="Vl_Dizimo" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Lancamentos">
+    <Key>
+      <PropertyRef Name="Id_Lanc" />
+    </Key>
+    <Property Name="Id_Lanc" Type="varchar" MaxLength="10" Nullable="false" />
+    <Property Name="Id_Deptos" Type="int" />
+    <Property Name="Id_Deptos_Receber" Type="int" />
+    <Property Name="Id_Tp_Lanc" Type="int" />
+    <Property Name="Tpo_Mov" Type="varchar" MaxLength="15" />
+    <Property Name="Tpo_pag" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Vl_Lanc" Type="decimal" Precision="8" Scale="2" Nullable="false" />
+    <Property Name="Desc_Lanc" Type="varchar" MaxLength="30" Nullable="false" />
+    <Property Name="Qtd_Parc_Lanc" Type="int" />
+    <Property Name="Dt_Lanc" Type="datetime" Nullable="false" />
+    <Property Name="Dt_Mov" Type="datetime" />
+    <Property Name="Dt_Venc" Type="datetime" />
+    <Property Name="Obs" Type="varchar" MaxLength="50" />
+    <Property Name="Faturado" Type="char" MaxLength="1" />
+  </EntityType>
+  <EntityType Name="Memb_Depto">
+    <Key>
+      <PropertyRef Name="Id_Memb" />
+      <PropertyRef Name="Id_Deptos" />
+      <PropertyRef Name="Dt_Ini" />
+    </Key>
+    <Property Name="Id_Memb" Type="int" Nullable="false" />
+    <Property Name="Id_Deptos" Type="int" Nullable="false" />
+    <Property Name="Dt_Ini" Type="date" Nullable="false" />
+    <Property Name="Dt_Fim" Type="date" />
+    <Property Name="Lider" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="Ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Memb_Familiares">
+    <Key>
+      <PropertyRef Name="Id_Memb" />
+      <PropertyRef Name="Id_Memb_Familiar" />
+    </Key>
+    <Property Name="Id_Memb" Type="int" Nullable="false" />
+    <Property Name="Id_Memb_Familiar" Type="int" Nullable="false" />
+    <Property Name="Parentesco" Type="varchar" MaxLength="15" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Membros">
+    <Key>
+      <PropertyRef Name="Id_Membros" />
+    </Key>
+    <Property Name="Id_Membros" Type="int" Nullable="false" />
+    <Property Name="Id_Cargo" Type="int" Nullable="false" />
+    <Property Name="Id_Status" Type="int" Nullable="false" />
+    <Property Name="Nome" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Mae" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Pai" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Sexo" Type="char" MaxLength="1" />
+    <Property Name="Matricula" Type="varchar" MaxLength="20" />
+    <Property Name="Dt_Nasc" Type="datetime" Nullable="false" />
+    <Property Name="Dt_Desde" Type="datetime" Nullable="false" />
+    <Property Name="Ativo" Type="bit" />
+    <Property Name="Tel1" Type="varchar" MaxLength="15" />
+    <Property Name="Tel2" Type="varchar" MaxLength="15" />
+    <Property Name="Tel3" Type="varchar" MaxLength="15" />
+    <Property Name="Email" Type="varchar" MaxLength="50" />
+    <Property Name="Cep" Type="varchar" MaxLength="9" />
+    <Property Name="Rua" Type="varchar" MaxLength="50" />
+    <Property Name="Bairro" Type="varchar" MaxLength="50" />
+    <Property Name="Cidade" Type="varchar" MaxLength="30" />
+    <Property Name="Uf" Type="varchar" MaxLength="2" />
+    <Property Name="N_Casa" Type="int" />
+    <Property Name="Foto" Type="varchar" MaxLength="150" />
+    <Property Name="Obs" Type="varchar(max)" />
+  </EntityType>
+  <EntityType Name="Status">
+    <Key>
+      <PropertyRef Name="Id_Status" />
+    </Key>
+    <Property Name="Id_Status" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nm_Status" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Desc_Status" Type="varchar" MaxLength="50" />
+    <Property Name="Ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Tipos_Lancamentos">
+    <Key>
+      <PropertyRef Name="Id_Tpo_Lanc" />
+    </Key>
+    <Property Name="Id_Tpo_Lanc" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Desc_Lanc" Type="varchar" MaxLength="15" Nullable="false" />
+    <Property Name="Ativo" Type="bit" />
+  </EntityType>
+  <EntityType Name="Visitantes">
+    <Key>
+      <PropertyRef Name="Id_Visit" />
+    </Key>
+    <Property Name="Id_Visit" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Nm_Visit" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Dt_Nasc" Type="datetime" />
+    <Property Name="Tel" Type="varchar" MaxLength="15" />
+  </EntityType>
+  <Association Name="FK__Agendas__Id_Dept__3E52440B">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+    <End Role="Agendas" Type="Self.Agendas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id_Deptos" />
+      </Principal>
+      <Dependent Role="Agendas">
+        <PropertyRef Name="Id_Deptos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Disciplin__Id_Me__4D94879B">
+    <End Role="Membros" Type="Self.Membros" Multiplicity="0..1" />
+    <End Role="Disciplinas" Type="Self.Disciplinas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membros">
+        <PropertyRef Name="Id_Membros" />
+      </Principal>
+      <Dependent Role="Disciplinas">
+        <PropertyRef Name="Id_Memb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Dizimos__Id_Memb__33D4B598">
+    <End Role="Membros" Type="Self.Membros" Multiplicity="1" />
+    <End Role="Dizimos" Type="Self.Dizimos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membros">
+        <PropertyRef Name="Id_Membros" />
+      </Principal>
+      <Dependent Role="Dizimos">
+        <PropertyRef Name="Id_Memb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lancament__Id_De__4222D4EF">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+    <End Role="Lancamentos" Type="Self.Lancamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id_Deptos" />
+      </Principal>
+      <Dependent Role="Lancamentos">
+        <PropertyRef Name="Id_Deptos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lancament__Id_De__4316F928">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="0..1" />
+    <End Role="Lancamentos" Type="Self.Lancamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id_Deptos" />
+      </Principal>
+      <Dependent Role="Lancamentos">
+        <PropertyRef Name="Id_Deptos_Receber" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Lancament__Id_Tp__440B1D61">
+    <End Role="Tipos_Lancamentos" Type="Self.Tipos_Lancamentos" Multiplicity="0..1" />
+    <End Role="Lancamentos" Type="Self.Lancamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Tipos_Lancamentos">
+        <PropertyRef Name="Id_Tpo_Lanc" />
+      </Principal>
+      <Dependent Role="Lancamentos">
+        <PropertyRef Name="Id_Tp_Lanc" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Memb_Dept__Id_De__4AB81AF0">
+    <End Role="Departamentos" Type="Self.Departamentos" Multiplicity="1" />
+    <End Role="Memb_Depto" Type="Self.Memb_Depto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Departamentos">
+        <PropertyRef Name="Id_Deptos" />
+      </Principal>
+      <Dependent Role="Memb_Depto">
+        <PropertyRef Name="Id_Deptos" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Memb_Dept__Id_Me__49C3F6B7">
+    <End Role="Membros" Type="Self.Membros" Multiplicity="1" />
+    <End Role="Memb_Depto" Type="Self.Memb_Depto" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membros">
+        <PropertyRef Name="Id_Membros" />
+      </Principal>
+      <Dependent Role="Memb_Depto">
+        <PropertyRef Name="Id_Memb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Memb_Fami__Id_Me__4BAC3F29">
+    <End Role="Membros" Type="Self.Membros" Multiplicity="1" />
+    <End Role="Memb_Familiares" Type="Self.Memb_Familiares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membros">
+        <PropertyRef Name="Id_Membros" />
+      </Principal>
+      <Dependent Role="Memb_Familiares">
+        <PropertyRef Name="Id_Memb" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Memb_Fami__Id_Me__4CA06362">
+    <End Role="Membros" Type="Self.Membros" Multiplicity="1" />
+    <End Role="Memb_Familiares" Type="Self.Memb_Familiares" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Membros">
+        <PropertyRef Name="Id_Membros" />
+      </Principal>
+      <Dependent Role="Memb_Familiares">
+        <PropertyRef Name="Id_Memb_Familiar" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Membros__Id_Carg__4E88ABD4">
+    <End Role="Cargos" Type="Self.Cargos" Multiplicity="1" />
+    <End Role="Membros" Type="Self.Membros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Cargos">
+        <PropertyRef Name="Id_Cargo" />
+      </Principal>
+      <Dependent Role="Membros">
+        <PropertyRef Name="Id_Cargo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Membros__Id_Stat__4F7CD00D">
+    <End Role="Status" Type="Self.Status" Multiplicity="1" />
+    <End Role="Membros" Type="Self.Membros" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Status">
+        <PropertyRef Name="Id_Status" />
+      </Principal>
+      <Dependent Role="Membros">
+        <PropertyRef Name="Id_Status" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="WebChurchManagementDBModelStoreContainer">
+    <EntitySet Name="Agendas" EntityType="Self.Agendas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Cargos" EntityType="Self.Cargos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Departamentos" EntityType="Self.Departamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Disciplinas" EntityType="Self.Disciplinas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Dizimos" EntityType="Self.Dizimos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Lancamentos" EntityType="Self.Lancamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Memb_Depto" EntityType="Self.Memb_Depto" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Memb_Familiares" EntityType="Self.Memb_Familiares" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Membros" EntityType="Self.Membros" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Status" EntityType="Self.Status" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Tipos_Lancamentos" EntityType="Self.Tipos_Lancamentos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Visitantes" EntityType="Self.Visitantes" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK__Agendas__Id_Dept__3E52440B" Association="Self.FK__Agendas__Id_Dept__3E52440B">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Agendas" EntitySet="Agendas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Disciplin__Id_Me__4D94879B" Association="Self.FK__Disciplin__Id_Me__4D94879B">
+      <End Role="Membros" EntitySet="Membros" />
+      <End Role="Disciplinas" EntitySet="Disciplinas" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Dizimos__Id_Memb__33D4B598" Association="Self.FK__Dizimos__Id_Memb__33D4B598">
+      <End Role="Membros" EntitySet="Membros" />
+      <End Role="Dizimos" EntitySet="Dizimos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lancament__Id_De__4222D4EF" Association="Self.FK__Lancament__Id_De__4222D4EF">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Lancamentos" EntitySet="Lancamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lancament__Id_De__4316F928" Association="Self.FK__Lancament__Id_De__4316F928">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Lancamentos" EntitySet="Lancamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Lancament__Id_Tp__440B1D61" Association="Self.FK__Lancament__Id_Tp__440B1D61">
+      <End Role="Tipos_Lancamentos" EntitySet="Tipos_Lancamentos" />
+      <End Role="Lancamentos" EntitySet="Lancamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Memb_Dept__Id_De__4AB81AF0" Association="Self.FK__Memb_Dept__Id_De__4AB81AF0">
+      <End Role="Departamentos" EntitySet="Departamentos" />
+      <End Role="Memb_Depto" EntitySet="Memb_Depto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Memb_Dept__Id_Me__49C3F6B7" Association="Self.FK__Memb_Dept__Id_Me__49C3F6B7">
+      <End Role="Membros" EntitySet="Membros" />
+      <End Role="Memb_Depto" EntitySet="Memb_Depto" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Memb_Fami__Id_Me__4BAC3F29" Association="Self.FK__Memb_Fami__Id_Me__4BAC3F29">
+      <End Role="Membros" EntitySet="Membros" />
+      <End Role="Memb_Familiares" EntitySet="Memb_Familiares" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Memb_Fami__Id_Me__4CA06362" Association="Self.FK__Memb_Fami__Id_Me__4CA06362">
+      <End Role="Membros" EntitySet="Membros" />
+      <End Role="Memb_Familiares" EntitySet="Memb_Familiares" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Membros__Id_Carg__4E88ABD4" Association="Self.FK__Membros__Id_Carg__4E88ABD4">
+      <End Role="Cargos" EntitySet="Cargos" />
+      <End Role="Membros" EntitySet="Membros" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Membros__Id_Stat__4F7CD00D" Association="Self.FK__Membros__Id_Stat__4F7CD00D">
+      <End Role="Status" EntitySet="Status" />
+      <End Role="Membros" EntitySet="Membros" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
