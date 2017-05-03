@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="5e688b857a364c629b2cf578b977f78f" Name="Diagram1">
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Agendas" Width="1.5" PointX="8.25" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Cargos" Width="1.5" PointX="0.75" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Departamentos" Width="1.5" PointX="6" PointY="3.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Disciplinas" Width="1.5" PointX="5.25" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Dizimos" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Lancamentos" Width="1.5" PointX="8.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Memb_Depto" Width="1.5" PointX="8.25" PointY="9.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Memb_Familiares" Width="1.5" PointX="5.25" PointY="16.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Membros" Width="1.5" PointX="3" PointY="7.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Status" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Tipos_Lancamentos" Width="1.5" PointX="6" PointY="13.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="WebChurchManagementDBModel.Visitantes" Width="1.5" PointX="8.75" PointY="13.75" IsExpanded="true" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Agendas__Id_Dept__3E52440B" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Membros__Id_Carg__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Lancament__Id_De__4222D4EF" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Lancament__Id_De__4316F928" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Memb_Dept__Id_De__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Disciplin__Id_Me__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Dizimos__Id_Memb__33D4B598" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Lancament__Id_Tp__440B1D61" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Memb_Dept__Id_Me__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Memb_Fami__Id_Me__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Memb_Fami__Id_Me__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="WebChurchManagementDBModel.FK__Membros__Id_Stat__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
