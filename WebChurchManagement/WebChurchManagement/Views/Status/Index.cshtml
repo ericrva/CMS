@@ -1,0 +1,45 @@
+﻿@model IEnumerable<WebChurchManagement.Models.Status>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Nm_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Desc_Status)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ativo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Nm_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Desc_Status)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ativo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Status }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Id_Status }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Status })
+        </td>
+    </tr>
+}
+
+</table>

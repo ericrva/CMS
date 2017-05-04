@@ -11,8 +11,7 @@ namespace WebChurchManagement.Controllers
     {
         private WebChurchManagementContext db = new WebChurchManagementContext();
 
-        // GET: Membros/Index
-        [Route("Index")]
+        // GET: Membros/
         public ActionResult Index()
         {
             var membros = db.Membros.Include(m => m.Cargos).Include(m => m.Status);

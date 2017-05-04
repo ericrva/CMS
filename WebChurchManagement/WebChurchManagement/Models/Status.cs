@@ -29,7 +29,6 @@ namespace WebChurchManagement.Models
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(15, ErrorMessage = "Campo deve conter no máximo 15 caracteres.")]
         public string Nm_Status { get; set; }
-        [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(50, ErrorMessage = "Campo deve conter no máximo 50 caracteres.")]
         public string Desc_Status { get; set; }
         [DefaultValue(true)]

@@ -6,76 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
+    @Styles.Render("~/Content/MenuCss.css")
     @Scripts.Render("~/bundles/modernizr")
-
 </head>
 <body>
     @*Inicio do Bootstrap*@
-    <div class="container">
-        <div class="row profile">
-            <div class="col-md-3">
-                <div class="profile-sidebar">
-                    <!-- SIDEBAR USERPIC -->
-                    <div class="profile-userpic">
-                        <img src="http://keenthemes.com/preview/metronic/theme/assets/admin/pages/media/profile/profile_user.jpg" class="img-responsive" alt="">
-                    </div>
-                    <!-- END SIDEBAR USERPIC -->
-                    <!-- SIDEBAR USER TITLE -->
-                    <div class="profile-usertitle">
-                        <div class="profile-usertitle-name">
-                            Marcus Doe
+    <div id="wrapper">
+        <div class="overlay"></div>
+
+        <!-- Sidebar -->
+        <nav class="navbar navbar-inverse navbar-fixed-top" id="sidebar-wrapper" role="navigation">
+            <ul class="nav sidebar-nav">
+                <li class="sidebar-brand">
+                    @Html.ActionLink("Home", "Index", "Home")
+                </li>
+                <li>
+                    @Html.ActionLink("Membros", "Index", "Membros")
+                </li>
+                <li>
+                    @Html.ActionLink("Cargos", "Index", "Cargos")
+                </li>
+                <li>
+                    @Html.ActionLink("Status", "Index", "Status")
+                </li>
+                <li>
+                    <a href="#">Team</a>
+                </li>
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works <span class="caret"></span></a>
+                    <ul class="dropdown-menu" role="menu">
+                        <li class="dropdown-header">Dropdown heading</li>
+                        <li><a href="#">Action</a></li>
+                        <li><a href="#">Another action</a></li>
+                        <li><a href="#">Something else here</a></li>
+                        <li><a href="#">Separated link</a></li>
+                        <li><a href="#">One more separated link</a></li>
+                    </ul>
+                </li>
+                <li>
+                    <a href="#">Services</a>
+                </li>
+                <li>
+                    <a href="#">Contact</a>
+                </li>
+                <li>
+                    <a href="https://twitter.com/maridlcrmn">Follow me</a>
+                </li>
+            </ul>
+        </nav>
+        <!-- /#sidebar-wrapper -->
+        <!-- Page Content -->
+        <div id="page-content-wrapper">
+            <button type="button" class="hamburger is-closed" data-toggle="offcanvas">
+                <span class="hamb-top"></span>
+                <span class="hamb-middle"></span>
+                <span class="hamb-bottom"></span>
+            </button>
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 col-lg-offset-2">
+                        <div class="col-md-9">
+                            <div class="profile-content">
+                                <div class="container body-content">
+                                    @RenderBody()
+                                    <hr />
+                                    <footer>
+                                        <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
+                                    </footer>
+                                </div>
+                            </div>
                         </div>
-                        <div class="profile-usertitle-job">
-                            Developer
-                        </div>
-                    </div>
-                    <!-- END SIDEBAR USER TITLE -->
-                    <!-- SIDEBAR BUTTONS -->
-                    <div class="profile-userbuttons">
-                        @*<button type="button" class="btn btn-success btn-sm">Follow</button>*@
-                        <button type="button" class="btn btn-danger btn-sm">Logout</button>
-                    </div>
-                    <!-- END SIDEBAR BUTTONS -->
-                    <!-- SIDEBAR MENU -->
-                    <div class="profile-usermenu">
-                        <ul class="nav">
-                            <li class="active">
-                                @Html.ActionLink("Início", "Index", "Home", new { @class = "glyphicon glyphicon-home" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("Sobre", "About", "Home", new { @class = "glyphicon glyphicon-user" })
-                            </li>
-                            <li>
-                                @Html.ActionLink("Contato", "Contact", "Home", new { @class = "glyphicon glyphicon-ok" })
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <i class="glyphicon glyphicon-flag"></i>
-                                    Help
-                                </a>
-                            </li>
-                        </ul>
-                    </div>
-                    <!-- END MENU -->
-                </div>
-            </div>
-            <div class="col-md-9">
-                <div class="profile-content">
-                    <div class="container body-content">
-                        @RenderBody()
-                        <hr />
-                        <footer>
-                            <p>&copy; @DateTime.Now.Year - Meu Aplicativo ASP.NET</p>
-                        </footer>
                     </div>
                 </div>
             </div>
         </div>
+        <!-- /#page-content-wrapper -->
+
     </div>
+    <!-- /#wrapper -->
     @*Fim do Bootstrap*@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
+    @Scripts.Render("~/Scripts/MenuJs.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
