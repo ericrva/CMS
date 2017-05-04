@@ -109,9 +109,9 @@ namespace WebChurchManagement.Controllers
         }
 
         // POST: Cargos/Deletar/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("Deletar")]
+        [Route("Deletar/{id}")]
         public ActionResult DeleteConfirmed(int id)
         {
             Cargo cargo = db.Cargos.Find(id);

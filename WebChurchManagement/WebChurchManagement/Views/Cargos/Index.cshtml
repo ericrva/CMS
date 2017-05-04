@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebChurchManagement.Models.Cargo>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Cargos";
 }
 
-<h2>Index</h2>
+<h2>Cargos</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Novo Cargo", "Inserir")
 </p>
 <table class="table">
     <tr>
@@ -29,9 +29,9 @@
             @Html.DisplayFor(modelItem => item.Ativo)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Cargo }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Cargo }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Cargo })
+            @Html.ActionLink("Editar", "Editar", new { id=item.Id_Cargo }) |
+            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.Id_Cargo }) |
+            @Html.ActionLink("Deletar", "Deletar", new { id=item.Id_Cargo })
         </td>
     </tr>
 }
