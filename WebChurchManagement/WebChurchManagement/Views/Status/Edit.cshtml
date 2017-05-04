@@ -1,16 +1,16 @@
 ﻿@model WebChurchManagement.Models.Status
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Editar Status";
 }
 
-<h2>Edit</h2>
+<h2>Editar Status</h2>
 
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Editar", "Status", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
-    
+
     <div class="form-horizontal">
         <h4>Status</h4>
         <hr />
@@ -45,14 +45,14 @@
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
-                <input type="submit" value="Save" class="btn btn-default" />
+                <input type="submit" value="Salvar" class="btn btn-default" />
             </div>
         </div>
     </div>
 }
 
 <div>
-    @Html.ActionLink("Back to List", "Index")
+    @Html.ActionLink("Voltar à lista", "Index")
 </div>
 
 @section Scripts {

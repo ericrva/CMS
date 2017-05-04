@@ -1,13 +1,13 @@
 ﻿@model IEnumerable<WebChurchManagement.Models.Status>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Status";
 }
 
-<h2>Index</h2>
+<h2>Status</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Inserir Novo Status", "Inserir")
 </p>
 <table class="table">
     <tr>
@@ -23,23 +23,24 @@
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nm_Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Desc_Status)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id_Status }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id_Status }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id_Status })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nm_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Desc_Status)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ativo)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Editar", new { id = item.Id_Status }) |
+                @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id_Status }) |
+                @Html.ActionLink("Deletar", "Deletar", new { id = item.Id_Status })
+            </td>
+        </tr>
+    }
 
 </table>

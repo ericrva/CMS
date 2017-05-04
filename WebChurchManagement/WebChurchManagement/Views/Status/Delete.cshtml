@@ -1,12 +1,12 @@
 ﻿@model WebChurchManagement.Models.Status
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Deletar Status";
 }
 
-<h2>Delete</h2>
+<h2>Deletar Status</h2>
 
-<h3>Are you sure you want to delete this?</h3>
+<h3>Tem certeza que deseja deletar o registro?</h3>
 <div>
     <h4>Status</h4>
     <hr />
@@ -37,12 +37,13 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm("Deletar", "Status", new { id = Model.Id_Status }, FormMethod.Post))
+    {
         @Html.AntiForgeryToken()
 
         <div class="form-actions no-color">
-            <input type="submit" value="Delete" class="btn btn-default" /> |
-            @Html.ActionLink("Back to List", "Index")
+            <input type="submit" value="Deletar" class="btn btn-default" /> |
+            @Html.ActionLink("Voltar à lista", "Index")
         </div>
     }
 </div>

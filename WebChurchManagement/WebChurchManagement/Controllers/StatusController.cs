@@ -6,6 +6,7 @@ using WebChurchManagement.Models;
 
 namespace WebChurchManagement.Controllers
 {
+    [RoutePrefix("Status")]
     public class StatusController : Controller
     {
         private WebChurchManagementContext db = new WebChurchManagementContext();
@@ -107,8 +108,9 @@ namespace WebChurchManagement.Controllers
         }
 
         // POST: Status/Delete/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
+        [Route("Deletar/{id}")]
         public ActionResult DeleteConfirmed(int id)
         {
             Status status = db.Status.Find(id);
