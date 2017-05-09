@@ -49,7 +49,7 @@ namespace WebChurchManagement.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Inserir")]
-        public ActionResult Create([Bind(Include = "Id_Membros,Id_Cargo,Id_Status,Nome,Mae,Pai,Sexo,Matricula,Dt_Nasc,Dt_Desde,Ativo,Tel1,Tel2,Tel3,Email,Cep,Rua,Bairro,Cidade,Uf,N_Casa,Foto,Obs")] Membro membro)
+        public ActionResult Create([Bind(Include = "Id_Cargo,Id_Status,Nome,Mae,Pai,Sexo,Matricula,Dt_Nasc,Dt_Desde,Ativo,Tel1,Tel2,Tel3,Email,Cep,Rua,Bairro,Cidade,Uf,N_Casa,Foto,Obs")] Membro membro)
         {
             if (ModelState.IsValid)
             {
