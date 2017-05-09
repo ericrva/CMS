@@ -28,6 +28,7 @@ namespace WebChurchManagement.Models
         public int Id_Cargo { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(30, ErrorMessage = "Campo deve conter no máximo 30 caracteres.")]
+        [DisplayName("Cargo")]
         public string Nome { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }

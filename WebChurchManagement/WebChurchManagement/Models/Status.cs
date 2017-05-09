@@ -28,8 +28,10 @@ namespace WebChurchManagement.Models
         public int Id_Status { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(15, ErrorMessage = "Campo deve conter no máximo 15 caracteres.")]
+        [DisplayName("Status")]
         public string Nm_Status { get; set; }
         [MaxLength(50, ErrorMessage = "Campo deve conter no máximo 50 caracteres.")]
+        [DisplayName("Descrição do status")]
         public string Desc_Status { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }

@@ -30,8 +30,10 @@ namespace WebChurchManagement.Models
 
         [Key]
         public int Id_Membros { get; set; }
+        [DisplayName("Cargo")]
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         public int Id_Cargo { get; set; }
+        [DisplayName("Status")]
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         public int Id_Status { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
@@ -43,10 +45,15 @@ namespace WebChurchManagement.Models
         public string Pai { get; set; }
         public string Sexo { get; set; }
         public string Matricula { get; set; }
+        [DisplayName("Data de Nascimento")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Dt_Nasc { get; set; }
+        [DisplayName("Data de Recepção")]
+        [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Dt_Desde { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }
+        [DisplayName("Telefone")]
         public string Tel1 { get; set; }
         public string Tel2 { get; set; }
         public string Tel3 { get; set; }
@@ -56,7 +63,8 @@ namespace WebChurchManagement.Models
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Uf { get; set; }
-        public int N_Casa { get; set; }
+        [DisplayName("Número da casa")]
+        public Nullable<int> N_Casa { get; set; }
         public string Foto { get; set; }
         public string Obs { get; set; }
 
