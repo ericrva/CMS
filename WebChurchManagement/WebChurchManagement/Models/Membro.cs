@@ -45,10 +45,10 @@ namespace WebChurchManagement.Models
         public string Pai { get; set; }
         public string Sexo { get; set; }
         public string Matricula { get; set; }
-        [DisplayName("Data de Nascimento")]
+        [DisplayName("Nascimento")]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Dt_Nasc { get; set; }
-        [DisplayName("Data de Recepção")]
+        [DisplayName("Recepção")]
         [DisplayFormat(DataFormatString = "{0:d}")]
         public DateTime Dt_Desde { get; set; }
         [DefaultValue(true)]
@@ -63,7 +63,7 @@ namespace WebChurchManagement.Models
         public string Bairro { get; set; }
         public string Cidade { get; set; }
         public string Uf { get; set; }
-        [DisplayName("Número da casa")]
+        [DisplayName("Número")]
         public Nullable<int> N_Casa { get; set; }
         public string Foto { get; set; }
         public string Obs { get; set; }

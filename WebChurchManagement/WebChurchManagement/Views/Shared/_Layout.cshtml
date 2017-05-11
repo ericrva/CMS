@@ -6,8 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Meu Aplicativo ASP.NET</title>
     @Styles.Render("~/Content/css")
-    @Styles.Render("~/Content/MenuCss.css")
     @Scripts.Render("~/bundles/modernizr")
+    @Styles.Render("~/Content/MenuCss.css")
+    @Styles.Render("~/Content/dataTables.bootstrap.min.css")
 </head>
 <body>
     @*Inicio do Bootstrap*@
@@ -64,7 +65,7 @@
             </button>
             <div class="container" style="width:inherit;">
                 <div class="row">
-                    <div class="col-lg-8 col-lg-offset-2">
+                    <div class="col-lg-12 col-lg-offset-2">
                         <div class="col-md-9">
                             <div class="profile-content">
                                 <div class="container body-content" style="width:inherit;">
@@ -88,7 +89,11 @@
 
     @Scripts.Render("~/bundles/jquery")
     @Scripts.Render("~/bundles/bootstrap")
-    @Scripts.Render("~/Scripts/MenuJs.js")
+    @Scripts.Render("~/Scripts/menu.js")
+    @Scripts.Render("~/Scripts/global.js")
+    @Scripts.Render("~/Scripts/jquery-1.12.4.js")
+    @Scripts.Render("~/Scripts/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/dataTables.bootstrap.min.js")
     @RenderSection("scripts", required: false)
 </body>
 </html>
