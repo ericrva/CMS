@@ -43,7 +43,7 @@ namespace WebChurchManagement.Models
         public string Mae { get; set; }
         [MaxLength(50, ErrorMessage = "Campo deve conter no máximo 50 caracteres.")]
         public string Pai { get; set; }
-        public string Sexo { get; set; }
+        public Gender Sexo { get; set; }
         public string Matricula { get; set; }
         [DisplayName("Nascimento")]
         [DisplayFormat(DataFormatString = "{0:d}")]
@@ -80,5 +80,11 @@ namespace WebChurchManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<MembroFamiliares> Memb_Familiares1 { get; set; }
         public virtual Status Status { get; set; }
+    }
+
+    public enum Gender
+    {
+        Masculino = 'M',
+        Feminino = 'F'
     }
 }
