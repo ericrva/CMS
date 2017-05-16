@@ -228,7 +228,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\dataTables.bootstrap.min.css" />
+    <Content Include="Content\Shared\DataTable\dataTables.bootstrap.min.css" />
     <Content Include="Content\MenuCss.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -248,13 +248,14 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
-    <Content Include="Scripts\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\Shared\DataTable\dataTables.bootstrap.min.js" />
+    <Content Include="Scripts\Shared\DataTable\superTable.js" />
     <Content Include="Scripts\global.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
-    <Content Include="Scripts\jquery-1.12.4.js" />
-    <Content Include="Scripts\jquery.dataTables.min.js" />
+    <Content Include="Scripts\Shared\DataTable\jquery-1.12.4.js" />
+    <Content Include="Scripts\Shared\DataTable\jquery.dataTables.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -314,7 +315,6 @@
     <Content Include="Views\Status\Details.cshtml" />
     <Content Include="Views\Status\Edit.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
-    <Content Include="Views\Membros\Index - Copy.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

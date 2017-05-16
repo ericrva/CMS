@@ -38,6 +38,7 @@ namespace WebChurchManagement.Models
         public bool Principal { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }
+        public int IdMembros { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Agenda> Agendas { get; set; }

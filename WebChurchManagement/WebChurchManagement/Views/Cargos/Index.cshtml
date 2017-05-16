@@ -4,36 +4,49 @@
     ViewBag.Title = "Cargos";
 }
 
-<h2>Cargos</h2>
-
 <p>
     @Html.ActionLink("Novo Cargo", "Inserir")
 </p>
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nome)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Nome)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ativo)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Editar", new { id=item.Id_Cargo }) |
-            @Html.ActionLink("Detalhes", "Detalhes", new { id=item.Id_Cargo }) |
-            @Html.ActionLink("Deletar", "Deletar", new { id=item.Id_Cargo })
-        </td>
-    </tr>
-}
-
+<table id="superTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Ativo)</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Ativo)</th>
+            <th>Ação</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ativo)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id_Cargo }) |
+                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id_Cargo }) |
+                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id_Cargo })
+                </td>
+            </tr>
+        }
+    </tbody>
 </table>
+
+@section Scripts {
+    @Styles.Render("~/Content/Shared/DataTable/dataTables.bootstrap.min.css")
+    @Scripts.Render("~/Scripts/Shared/DataTable/jquery-1.12.4.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/dataTables.bootstrap.min.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/superTable.js")
+}
