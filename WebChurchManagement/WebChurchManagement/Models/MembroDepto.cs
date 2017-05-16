@@ -19,13 +19,10 @@ namespace WebChurchManagement.Models
     public partial class MembroDepto
     {
         [Key]
+        [Required(ErrorMessage = "Campo não pode ser nulo.")]
         public int Id_Memb { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         public int Id_Deptos { get; set; }
-        public DateTime Dt_Ini { get; set; }
-        public DateTime Dt_Fim { get; set; }
-        [DefaultValue(true)]
-        public bool Lider { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }
 

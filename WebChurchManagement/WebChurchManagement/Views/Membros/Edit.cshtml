@@ -1,10 +1,8 @@
 ﻿@model WebChurchManagement.Models.Membro
 
 @{
-    ViewBag.Title = "Editar";
+    ViewBag.Title = "Editar Membro";
 }
-
-<h2>Editar</h2>
 
 
 @using (Html.BeginForm("Editar", "Membros", FormMethod.Post))
@@ -12,8 +10,6 @@
     @Html.AntiForgeryToken()
 
     <div class="form-horizontal">
-        <h4>Membro</h4>
-        <hr />
 
         <ul class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#home">Básico</a></li>
@@ -95,7 +91,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Nasc, "Data de Nascimento", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "form-control CampoData" } })
+                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Dt_Nasc, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -103,7 +99,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Desde, "Data de Recepção", htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "form-control CampoData" } })
+                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "form-control" } })
                             @Html.ValidationMessageFor(model => model.Dt_Desde, "", new { @class = "text-danger" })
                         </div>
                     </div>
