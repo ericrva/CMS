@@ -75,7 +75,10 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Sexo, new { htmlAttributes = new { @class = "form-control" } })
+                            Masculino
+                            @Html.RadioButtonFor(model => model.Sexo, WebChurchManagement.Models.EnumSexo.M, htmlAttributes: new { @checked = "true" })
+                            Feminino
+                            @Html.RadioButtonFor(model => model.Sexo, WebChurchManagement.Models.EnumSexo.F)
                             @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -91,7 +94,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Nasc, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10" } })
+                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10", @readonly = "readonly" } })
                             <span id="dtNascSpan" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                             @Html.ValidationMessageFor(model => model.Dt_Nasc, "", new { @class = "text-danger" })
                         </div>
@@ -100,7 +103,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Desde, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10" } })
+                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10", @readonly = "readonly" } })
                             <span id="dtDesdeSpan" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                             @Html.ValidationMessageFor(model => model.Dt_Desde, "", new { @class = "text-danger" })
                         </div>
@@ -190,7 +193,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Uf, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Uf, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.DropDownListFor(model => model.Uf, null, htmlAttributes: new { @class = "form-control" })
                         @Html.ValidationMessageFor(model => model.Uf, "", new { @class = "text-danger" })
                     </div>
                 </div>

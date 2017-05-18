@@ -1,4 +1,5 @@
-﻿using System.Data.Entity;
+﻿using System;
+using System.Data.Entity;
 using System.Linq;
 using System.Net;
 using System.Web.Mvc;
@@ -40,6 +41,7 @@ namespace WebChurchManagement.Controllers
         {
             ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome");
             ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status");
+            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)));
             return View();
         }
 
@@ -60,6 +62,7 @@ namespace WebChurchManagement.Controllers
 
             ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
             ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
+            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
             return View(membro);
         }
 
@@ -78,6 +81,7 @@ namespace WebChurchManagement.Controllers
             }
             ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
             ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
+            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
             return View(membro);
         }
 
@@ -97,6 +101,7 @@ namespace WebChurchManagement.Controllers
             }
             ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
             ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
+            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
             return View(membro);
         }
 

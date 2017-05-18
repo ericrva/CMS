@@ -46,10 +46,10 @@ namespace WebChurchManagement.Models
         public string Sexo { get; set; }
         public string Matricula { get; set; }
         [DisplayName("Nascimento")]
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
         public DateTime Dt_Nasc { get; set; }
         [DisplayName("Recepção")]
-        [DisplayFormat(DataFormatString = "{0:d}")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
         public DateTime Dt_Desde { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }
@@ -57,6 +57,7 @@ namespace WebChurchManagement.Models
         public string Tel1 { get; set; }
         public string Tel2 { get; set; }
         public string Tel3 { get; set; }
+        [EmailAddress]
         public string Email { get; set; }
         public string Cep { get; set; }
         public string Rua { get; set; }

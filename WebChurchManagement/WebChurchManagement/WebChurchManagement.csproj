@@ -206,6 +206,8 @@
     <Compile Include="Models\Departamento.cs" />
     <Compile Include="Models\Disciplina.cs" />
     <Compile Include="Models\Dizimo.cs" />
+    <Compile Include="Models\EnumSexo.cs" />
+    <Compile Include="Models\EnumUF.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\Lancamento.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
