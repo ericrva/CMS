@@ -6,181 +6,70 @@
 
 <div>
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Matricula)
-        </dt>
+        <dd id="file"><img src="~/img/@Html.DisplayFor(model => model.Foto)" height="120" width="80" /></dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Matricula)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Matricula)</dt>
+        <dd>@Html.DisplayFor(model => model.Matricula)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Nome)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Nome)</dt>
+        <dd>@Html.DisplayFor(model => model.Nome)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Nome)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Cargos.Nome)</dt>
+        <dd>@Html.DisplayFor(model => model.Cargos.Nome)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Cargos.Nome)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Status.Nm_Status)</dt>
+        <dd>@Html.DisplayFor(model => model.Status.Nm_Status)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Cargos.Nome)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Mae)</dt>
+        <dd>@Html.DisplayFor(model => model.Mae)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Status.Nm_Status)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Pai)</dt>
+        <dd>@Html.DisplayFor(model => model.Pai)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Status.Nm_Status)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Sexo)</dt>
+        <dd>@Html.DisplayFor(model => model.Sexo)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Mae)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Dt_Nasc)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Nasc)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Mae)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Dt_Desde)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Desde)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Pai)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Ativo)</dt>
+        <dd>@Html.DisplayFor(model => model.Ativo)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Pai)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Tel1)</dt>
+        <dd>@Html.DisplayFor(model => model.Tel1)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Sexo)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Tel2)</dt>
+        <dd>@Html.DisplayFor(model => model.Tel2)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Sexo)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Tel3)</dt>
+        <dd>@Html.DisplayFor(model => model.Tel3)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dt_Nasc)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Email)</dt>
+        <dd>@Html.DisplayFor(model => model.Email)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Dt_Nasc)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Cep)</dt>
+        <dd>@Html.DisplayFor(model => model.Cep)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Dt_Desde)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Rua)</dt>
+        <dd>@Html.DisplayFor(model => model.Rua)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Dt_Desde)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Bairro)</dt>
+        <dd>@Html.DisplayFor(model => model.Bairro)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Ativo)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.Cidade)</dt>
+        <dd>@Html.DisplayFor(model => model.Cidade)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Ativo)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Uf)</dt>
+        <dd>@Html.DisplayFor(model => model.Uf)</dd>
 
-        <dt>
-            @Html.DisplayNameFor(model => model.Tel1)
-        </dt>
+        <dt>@Html.DisplayNameFor(model => model.N_Casa)</dt>
+        <dd>@Html.DisplayFor(model => model.N_Casa)</dd>
 
-        <dd>
-            @Html.DisplayFor(model => model.Tel1)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tel2)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tel2)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Tel3)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tel3)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Email)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Email)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cep)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cep)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Rua)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Rua)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Bairro)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Bairro)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Cidade)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Cidade)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Uf)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Uf)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.N_Casa)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.N_Casa)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Foto)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Foto)
-        </dd>
-
-        <dt>
-            @Html.DisplayNameFor(model => model.Obs)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Obs)
-        </dd>
+        <dt>@Html.DisplayNameFor(model => model.Obs)</dt>
+        <dd>@Html.DisplayFor(model => model.Obs)</dd>
 
     </dl>
 </div>
@@ -188,3 +77,7 @@
     @Html.ActionLink("Editar", "Editar", new { id = Model.Id_Membros }) |
     @Html.ActionLink("Voltar à lista", "Index")
 </p>
+
+@section Scripts{
+    @Styles.Render("~/Content/Membros/membrosDetailsDelete.css")
+}

@@ -1,0 +1,31 @@
+﻿.dateTimePicker {
+    width: 11%;
+}
+
+.mascaraCep {
+    width: 12%;
+}
+
+.mascaraTelefone {
+    width: 17%;
+}
+
+#Id_Cargo {
+    width: 20%;
+}
+
+#Id_Status {
+    width: 20%;
+}
+
+#Uf {
+    width: 10%;
+}
+
+#N_Casa {
+    width: 12%;
+}
+
+#Matricula {
+    width: 11%
+}

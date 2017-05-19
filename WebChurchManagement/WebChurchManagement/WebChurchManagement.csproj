@@ -230,6 +230,9 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Membros\membrosCreateEdit.css" />
+    <Content Include="Content\Membros\membrosDetailsDelete.css" />
+    <Content Include="Content\Membros\membrosIndex.css" />
     <Content Include="Content\Shared\DataTable\dataTables.bootstrap.min.css" />
     <Content Include="Content\MenuCss.css" />
     <Content Include="Content\Shared\DateTimePicker\bootstrap-datepicker3.css" />
@@ -256,8 +259,16 @@
     <Content Include="Content\Shared\DateTimePicker\bootstrap-datepicker3.standalone.css.map" />
     <Content Include="Content\Shared\DateTimePicker\bootstrap-datepicker3.standalone.min.css.map" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="img\3x4 - Leonardo_Dorighetto_Vieira.png" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery.mask.js" />
+    <Content Include="Scripts\jquery.mask.min.js" />
+    <Content Include="Scripts\mascaras.js" />
+    <Content Include="Scripts\Membros\jQuery.MultiFile.min.js" />
+    <Content Include="Scripts\Membros\posicionamentoMembrosIndex.js" />
+    <Content Include="Scripts\Membros\uploadFileMembros.js" />
+    <Content Include="Scripts\methods_pt.js" />
     <Content Include="Scripts\Shared\DataTable\dataTables.bootstrap.min.js" />
     <Content Include="Scripts\Shared\DataTable\superTable.js" />
     <Content Include="Scripts\global.js" />
@@ -270,7 +281,7 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Membros\membros.js" />
+    <Content Include="Scripts\Membros\buscaEnderecoCep.js" />
     <Content Include="Scripts\menu.js" />
     <Content Include="Scripts\modernizr-2.6.2.js" />
     <Content Include="Scripts\respond.js" />

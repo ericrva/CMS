@@ -44,7 +44,7 @@ namespace WebChurchManagement.Models
         [MaxLength(50, ErrorMessage = "Campo deve conter no máximo 50 caracteres.")]
         public string Pai { get; set; }
         public string Sexo { get; set; }
-        public string Matricula { get; set; }
+        public int Matricula { get; set; }
         [DisplayName("Nascimento")]
         [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
         public DateTime Dt_Nasc { get; set; }

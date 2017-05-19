@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Net;
+using System.Web;
 using System.Web.Mvc;
 using WebChurchManagement.Models;
 
@@ -42,6 +44,7 @@ namespace WebChurchManagement.Controllers
             ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome");
             ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status");
             ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)));
+            ViewBag.Matricula = Convert.ToInt32(db.Membros.Max(m => m.Matricula)) + 1;
             return View();
         }
 
@@ -55,6 +58,8 @@ namespace WebChurchManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                membro.Foto = uploadArquivo(membro);
+
                 db.Membros.Add(membro);
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -95,6 +100,8 @@ namespace WebChurchManagement.Controllers
         {
             if (ModelState.IsValid)
             {
+                membro.Foto = uploadArquivo(membro);
+
                 db.Entry(membro).State = EntityState.Modified;
                 db.SaveChanges();
                 return RedirectToAction("Index");
@@ -122,15 +129,40 @@ namespace WebChurchManagement.Controllers
         }
 
         // POST: Membros/Deletar/5
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         [ValidateAntiForgeryToken]
-        [Route("Deletar")]
+        [Route("Deletar/{id}")]
         public ActionResult DeleteConfirmed(int id)
         {
             Membro membro = db.Membros.Find(id);
             db.Membros.Remove(membro);
             db.SaveChanges();
             return RedirectToAction("Index");
+        }
+
+        private string uploadArquivo(Membro membro)
+        {
+            string nomeArquivo = string.Empty;
+            //int arquivosSalvos = 0;
+            //for (int i = 0; i < Request.Files.Count; i++)
+            //{
+            HttpPostedFileBase arquivo = Request.Files[0];
+
+            //Salva o arquivo
+            if (arquivo.ContentLength > 0)
+            {
+                string uploadPath = Server.MapPath("~/img");
+                nomeArquivo = membro.Nome.Split(' ')[0] + membro.Dt_Nasc.ToString("yyyyMMdd") + ".png";
+                string caminhoArquivo = Path.Combine(uploadPath, nomeArquivo);
+
+                arquivo.SaveAs(caminhoArquivo);
+                //arquivosSalvos++;
+
+            }
+            //}
+
+            return nomeArquivo;
+
         }
 
         protected override void Dispose(bool disposing)

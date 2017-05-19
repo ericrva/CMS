@@ -11,8 +11,14 @@ namespace WebChurchManagement
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));
 
+            //ANTIGO JQUERYVAL.
+            //bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
+            //            "~/Scripts/jquery.validate*"));
+
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery.unobtrusive*",
+                        "~/Scripts/jquery.validate*",
+                        "~/Scripts/methods_pt.js"));
 
             // Use a versão em desenvolvimento do Modernizr para desenvolver e aprender. Em seguida, quando estiver
             // ready for production, use the build tool at https://modernizr.com to pick only the tests you need.

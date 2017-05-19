@@ -5,7 +5,7 @@
 }
 
 
-@using (Html.BeginForm("Editar", "Membros", FormMethod.Post))
+@using (Html.BeginForm("Editar", "Membros", FormMethod.Post, new { enctype = "multipart/form-data" }))
 {
     @Html.AntiForgeryToken()
 
@@ -26,7 +26,7 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Foto, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Foto, new { htmlAttributes = new { @class = "form-control" } })
+                            <input id="file" type="file" />
                             @Html.ValidationMessageFor(model => model.Foto, "", new { @class = "text-danger" })
                         </div>
                     </div>
@@ -76,7 +76,7 @@
                         @Html.LabelFor(model => model.Sexo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             Masculino
-                            @Html.RadioButtonFor(model => model.Sexo, WebChurchManagement.Models.EnumSexo.M, htmlAttributes: new { @checked = "true" })
+                            @Html.RadioButtonFor(model => model.Sexo, WebChurchManagement.Models.EnumSexo.M)
                             Feminino
                             @Html.RadioButtonFor(model => model.Sexo, WebChurchManagement.Models.EnumSexo.F)
                             @Html.ValidationMessageFor(model => model.Sexo, "", new { @class = "text-danger" })
@@ -94,18 +94,16 @@
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Nasc, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10", @readonly = "readonly" } })
-                            <span id="dtNascSpan" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                            @Html.ValidationMessageFor(model => model.Dt_Nasc, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Dt_Nasc, new { htmlAttributes = new { @class = "dateTimePicker", @readonly = "readonly" } })
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                         </div>
                     </div>
 
                     <div class="form-group">
                         @Html.LabelFor(model => model.Dt_Desde, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
-                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "dateTimePicker", @size = "10", @readonly = "readonly" } })
-                            <span id="dtDesdeSpan" class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
-                            @Html.ValidationMessageFor(model => model.Dt_Desde, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Dt_Desde, new { htmlAttributes = new { @class = "dateTimePicker", @readonly = "readonly" } })
+                            <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
                         </div>
                     </div>
 
@@ -113,7 +111,7 @@
                         @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
                         <div class="col-md-10">
                             <div class="checkbox">
-                                @Html.EditorFor(model => model.Ativo)
+                                @Html.CheckBoxFor(model => model.Ativo, new { @checked = "true" })
                                 @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
                             </div>
                         </div>
@@ -126,7 +124,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Tel1, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Tel1, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Tel1, new { htmlAttributes = new { @class = "form-control mascaraTelefone" } })
                         @Html.ValidationMessageFor(model => model.Tel1, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -134,7 +132,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Tel2, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Tel2, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Tel2, new { htmlAttributes = new { @class = "form-control mascaraTelefone" } })
                         @Html.ValidationMessageFor(model => model.Tel2, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -142,7 +140,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Tel3, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Tel3, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.EditorFor(model => model.Tel3, new { htmlAttributes = new { @class = "form-control mascaraTelefone" } })
                         @Html.ValidationMessageFor(model => model.Tel3, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -161,7 +159,7 @@
                 <div class="form-group">
                     @Html.LabelFor(model => model.Cep, htmlAttributes: new { @class = "control-label col-md-2" })
                     <div class="col-md-10">
-                        @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control", @onblur = "buscaEnderecoCep()" } })
+                        @Html.EditorFor(model => model.Cep, new { htmlAttributes = new { @class = "form-control mascaraCep", @onblur = "buscaEnderecoCep()" } })
                         @Html.ValidationMessageFor(model => model.Cep, "", new { @class = "text-danger" })
                     </div>
                 </div>
@@ -236,9 +234,14 @@
 @section Scripts {
     @Styles.Render("~/Content/Shared/DateTimePicker/bootstrap-datepicker3.min.css")
     @Styles.Render("~/Content/Shared/DateTimePicker/bootstrap-datepicker3.standalone.min.css")
+    @Styles.Render("~/Content/Membros/membrosCreateEdit.css")
     @Scripts.Render("~/bundles/jqueryval")
-    @Scripts.Render("~/Scripts/Membros/membros.js")
+    @Scripts.Render("~/Scripts/Membros/buscaEnderecoCep.js")
     @Scripts.Render("~/Scripts/Shared/DateTimePicker/bootstrap-datepicker.min.js")
     @Scripts.Render("~/Scripts/Shared/DateTimePicker/dateTimePicker.js")
     @Scripts.Render("~/Scripts/Shared/DateTimePicker/locales/bootstrap-datepicker.pt-BR.min.js")
+    @Scripts.Render("~/Scripts/jquery.mask.min.js")
+    @Scripts.Render("~/Scripts/mascaras.js")
+    @Scripts.Render("~/Scripts/Membros/jQuery.MultiFile.min.js")
+    @Scripts.Render("~/Scripts/Membros/uploadFileMembros.js")
 }

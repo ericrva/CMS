@@ -46,11 +46,13 @@
                 <td>@Html.DisplayFor(modelItem => item.Dt_Desde)</td>
                 <td>@Html.DisplayFor(modelItem => item.Tel1)</td>
                 <td>@Html.DisplayFor(modelItem => item.Ativo)</td>
-                <td>@Html.DisplayFor(modelItem => item.Foto)</td>
+                <td><img src="~/img/@Html.DisplayFor(modelItem => item.Foto)" height="120" width="80" /></td>
                 <td>
-                    @Html.ActionLink("Editar", "Editar", new { id = item.Id_Membros }) |
-                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id_Membros }) |
-                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id_Membros })
+                    @*<span class='glyphicon glyphicon-plus' aria-hidden='true'></span>
+                        <span class='glyphicon glyphicon-plus-sign' aria-hidden='true'></span>*@
+                    @Html.ActionLink(" ", "Editar", new { id = item.Id_Membros }, new { @class = "glyphicon glyphicon-edit", @title = "Editar" }) |
+                    @Html.ActionLink(" ", "Detalhes", new { id = item.Id_Membros }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |
+                    @Html.ActionLink(" ", "Deletar", new { id = item.Id_Membros }, new { @class = "glyphicon glyphicon-trash", @title = "Deletar" })
                 </td>
             </tr>
         }
@@ -58,10 +60,11 @@
 </table>
 
 @section Scripts {
-    @Scripts.Render("~/bundles/jqueryval")
+    @Styles.Render("~/Content/Shared/DataTable/membrosIndex.css")
     @Styles.Render("~/Content/Shared/DataTable/dataTables.bootstrap.min.css")
     @Scripts.Render("~/Scripts/Shared/DataTable/jquery-1.12.4.js")
     @Scripts.Render("~/Scripts/Shared/DataTable/jquery.dataTables.min.js")
     @Scripts.Render("~/Scripts/Shared/DataTable/dataTables.bootstrap.min.js")
     @Scripts.Render("~/Scripts/Shared/DataTable/superTable.js")
+    @Scripts.Render("~/Scripts/Membros/posicionamentoMembrosIndex.js")
 }

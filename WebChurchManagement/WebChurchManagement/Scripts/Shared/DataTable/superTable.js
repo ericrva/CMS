@@ -1,4 +1,6 @@
 ﻿//Realiza a criação do dataTable nas telas index de cada controller.
+//Para mais informações sobre o datatable procurar no site:
+//https://datatables.net/examples/styling/display.html
 function superTable() {
 
     $(document).ready(function () {
