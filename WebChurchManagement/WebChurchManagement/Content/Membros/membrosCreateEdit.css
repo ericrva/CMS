@@ -27,5 +27,15 @@
 }
 
 #Matricula {
-    width: 11%
+    width: 11%;
+}
+
+#posicaoAtivo {
+    position: absolute;
+    right: 65%;
+}
+
+#posicaoAtivoChk {
+    position: absolute;
+    left: 100%;
 }
