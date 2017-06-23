@@ -28,15 +28,9 @@
         @foreach (var item in Model)
         {
             <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Nm_Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Desc_Status)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ativo)
-                </td>
+                <td>@Html.DisplayFor(modelItem => item.Nm_Status)</td>
+                <td>@Html.DisplayFor(modelItem => item.Desc_Status)</td>
+                <td>@Html.DisplayFor(modelItem => item.Ativo)</td>
                 <td>
                     @Html.ActionLink(" ", "Editar", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-edit", @title = "Editar" }) |
                     @Html.ActionLink(" ", "Detalhes", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |

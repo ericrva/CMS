@@ -193,6 +193,7 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CargosController.cs" />
+    <Compile Include="Controllers\DisciplinasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembrosController.cs" />
@@ -405,6 +406,11 @@
     <Content Include="Views\Status\Details.cshtml" />
     <Content Include="Views\Status\Edit.cshtml" />
     <Content Include="Views\Status\Index.cshtml" />
+    <Content Include="Views\Disciplinas\Create.cshtml" />
+    <Content Include="Views\Disciplinas\Delete.cshtml" />
+    <Content Include="Views\Disciplinas\Details.cshtml" />
+    <Content Include="Views\Disciplinas\Edit.cshtml" />
+    <Content Include="Views\Disciplinas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
