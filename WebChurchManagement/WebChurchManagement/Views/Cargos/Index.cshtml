@@ -34,9 +34,9 @@
                     @Html.DisplayFor(modelItem => item.Ativo)
                 </td>
                 <td>
-                    @Html.ActionLink("Editar", "Editar", new { id = item.Id_Cargo }) |
-                    @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id_Cargo }) |
-                    @Html.ActionLink("Deletar", "Deletar", new { id = item.Id_Cargo })
+                    @Html.ActionLink(" ", "Editar", new { id = item.Id_Cargo }, new { @class = "glyphicon glyphicon-edit", @title = "Editar" }) |
+                    @Html.ActionLink(" ", "Detalhes", new { id = item.Id_Cargo }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |
+                    @Html.ActionLink(" ", "Deletar", new { id = item.Id_Cargo }, new { @class = "glyphicon glyphicon-trash", @title = "Deletar" })
                 </td>
             </tr>
         }
