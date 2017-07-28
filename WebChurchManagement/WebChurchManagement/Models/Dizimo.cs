@@ -11,6 +11,7 @@ namespace WebChurchManagement.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,11 +19,18 @@ namespace WebChurchManagement.Models
     public partial class Dizimo
     {
         [Key]
+        [DisplayName("Id")]
         public int Id_Dizimo { get; set; }
+        [DisplayName("Membro")]
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
-        public int Id_Memb { get; set; }
+        public int Id_Membros { get; set; }
+        [DisplayName("Mês Referência")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:MM/yyyy}", HtmlEncode = true)]
         public DateTime Mes_Ref { get; set; }
+        [DisplayName("Data Movimento")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
         public DateTime Dt_Mov { get; set; }
+        [DisplayName("Valor")]
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         public decimal Vl_Dizimo { get; set; }
 

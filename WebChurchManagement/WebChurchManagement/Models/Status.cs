@@ -25,6 +25,7 @@ namespace WebChurchManagement.Models
         }
 
         [Key]
+        [DisplayName("Id Status")]
         public int Id_Status { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(15, ErrorMessage = "Campo deve conter no máximo 15 caracteres.")]

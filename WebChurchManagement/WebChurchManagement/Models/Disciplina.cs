@@ -11,6 +11,7 @@ namespace WebChurchManagement.Models
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
@@ -18,12 +19,19 @@ namespace WebChurchManagement.Models
     public partial class Disciplina
     {
         [Key]
+        [DisplayName("Id Disciplina")]
         public int Id_Disc { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
-        public int Id_Memb { get; set; }
+        [DisplayName("Id Membro")]
+        public int Id_Membros { get; set; }
         [MaxLength(50, ErrorMessage = "Campo deve conter no máximo 50 caracteres.")]
+        [DisplayName("Motivo")]
         public string Motivo { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
+        [DisplayName("Inicio")]
         public DateTime Dt_Ini { get; set; }
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
+        [DisplayName("Fim")]
         public DateTime Dt_Fim { get; set; }
 
         public virtual Membro Membros { get; set; }

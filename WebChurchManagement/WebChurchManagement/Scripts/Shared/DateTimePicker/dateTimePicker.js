@@ -12,4 +12,13 @@ $(document).ready(function () {
         todayHighlight: true
     });
 
+    $('.mesAno').datepicker({
+        format: "01/mm/yyyy",
+        todayBtn: "linked",
+        clearBtn: true,
+        language: "pt-BR",
+        autoclose: true,
+        todayHighlight: true
+    });
+
 });

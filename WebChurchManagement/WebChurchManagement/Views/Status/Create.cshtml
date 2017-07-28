@@ -4,7 +4,7 @@
     ViewBag.Title = "Inserir Novo Status";
 }
 
-@using (Html.BeginForm())
+@using (Html.BeginForm("Inserir", "Status", FormMethod.Post))
 {
     @Html.AntiForgeryToken()
 

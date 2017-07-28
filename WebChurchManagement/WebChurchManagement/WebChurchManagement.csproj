@@ -194,6 +194,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CargosController.cs" />
     <Compile Include="Controllers\DisciplinasController.cs" />
+    <Compile Include="Controllers\DizimosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembrosController.cs" />
@@ -231,6 +232,7 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Dizimos\dizimosCreateEdit.css" />
     <Content Include="Content\Membros\membrosCreateEdit.css" />
     <Content Include="Content\Membros\membrosDetailsDelete.css" />
     <Content Include="Content\Membros\membrosIndex.css" />
@@ -411,6 +413,11 @@
     <Content Include="Views\Disciplinas\Details.cshtml" />
     <Content Include="Views\Disciplinas\Edit.cshtml" />
     <Content Include="Views\Disciplinas\Index.cshtml" />
+    <Content Include="Views\Dizimos\Create.cshtml" />
+    <Content Include="Views\Dizimos\Delete.cshtml" />
+    <Content Include="Views\Dizimos\Details.cshtml" />
+    <Content Include="Views\Dizimos\Edit.cshtml" />
+    <Content Include="Views\Dizimos\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />

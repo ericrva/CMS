@@ -27,10 +27,10 @@
             @Html.HiddenFor(model => model.Id_Disc)
     
             <div class="form-group">
-                @Html.LabelFor(model => model.Id_Memb, htmlAttributes: new { @class = "control-label col-md-2" })
+                @Html.LabelFor(model => model.Membros.Nome, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Id_Memb, new { htmlAttributes = new { @class = "form-control" } })
-                    @Html.ValidationMessageFor(model => model.Id_Memb, "", new { @class = "text-danger" })
+                    @Html.EditorFor(model => model.Membros.Nome, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.Membros.Nome, "", new { @class = "text-danger" })
                 </div>
             </div>
     

@@ -11,8 +11,7 @@
     <thead>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id_Disc)</th>
-            <th>@Html.DisplayNameFor(model => model.Id_Memb)</th>
-            <th>@Html.DisplayNameFor(model => model.Motivo)</th>
+            <th>@Html.DisplayNameFor(model => model.Membros.Nome)</th>
             <th>@Html.DisplayNameFor(model => model.Dt_Ini)</th>
             <th>@Html.DisplayNameFor(model => model.Dt_Fim)</th>
             <th>Ação</th>
@@ -21,8 +20,7 @@
     <tfoot>
         <tr>
             <th>@Html.DisplayNameFor(model => model.Id_Disc)</th>
-            <th>@Html.DisplayNameFor(model => model.Id_Memb)</th>
-            <th>@Html.DisplayNameFor(model => model.Motivo)</th>
+            <th>@Html.DisplayNameFor(model => model.Membros.Nome)</th>
             <th>@Html.DisplayNameFor(model => model.Dt_Ini)</th>
             <th>@Html.DisplayNameFor(model => model.Dt_Fim)</th>
             <th>Ação</th>
@@ -34,8 +32,7 @@
 
             <tr>
                 <td>@Html.DisplayFor(model => item.Id_Disc)</td>
-                <td>@Html.DisplayFor(model => item.Id_Memb)</td>
-                <td>@Html.DisplayFor(model => item.Motivo)</td>
+                <td>@Html.DisplayFor(model => item.Membros.Nome)</td>
                 <td>@Html.DisplayFor(model => item.Dt_Ini)</td>
                 <td>@Html.DisplayFor(model => item.Dt_Fim)</td>
                 <td>

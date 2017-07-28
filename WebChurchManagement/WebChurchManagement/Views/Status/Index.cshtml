@@ -10,6 +10,7 @@
 <table id="superTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
     <thead>
         <tr>
+            <th>@Html.DisplayNameFor(model => model.Id_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Nm_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Desc_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Ativo)</th>
@@ -18,6 +19,7 @@
     </thead>
     <tfoot>
         <tr>
+            <th>@Html.DisplayNameFor(model => model.Id_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Nm_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Desc_Status)</th>
             <th>@Html.DisplayNameFor(model => model.Ativo)</th>
@@ -28,12 +30,13 @@
         @foreach (var item in Model)
         {
             <tr>
+                <th>@Html.DisplayFor(modelItem => item.Id_Status)</th>
                 <td>@Html.DisplayFor(modelItem => item.Nm_Status)</td>
                 <td>@Html.DisplayFor(modelItem => item.Desc_Status)</td>
                 <td>@Html.DisplayFor(modelItem => item.Ativo)</td>
                 <td>
                     @Html.ActionLink(" ", "Editar", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-edit", @title = "Editar" }) |
-                    @Html.ActionLink(" ", "Detalhes", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |
+                    @*@Html.ActionLink(" ", "Detalhes", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |*@
                     @Html.ActionLink(" ", "Deletar", new { id = item.Id_Status }, new { @class = "glyphicon glyphicon-trash", @title = "Deletar" })
                 </td>
             </tr>

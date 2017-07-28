@@ -1,0 +1,59 @@
+﻿@model IEnumerable<WebChurchManagement.Models.Dizimo>
+
+@{
+    ViewBag.Title = "Dizimos";
+}
+
+<p>
+    @Html.ActionLink("Lançar Dizimo", "Inserir")
+</p>
+
+<table id="superTable" class="table table-striped table-bordered" cellspacing="0" width="100%">
+    <thead>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id_Dizimo)</th>
+            <th>@Html.DisplayNameFor(model => model.Membros.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Mes_Ref)</th>
+            <th>@Html.DisplayNameFor(model => model.Dt_Mov)</th>
+            <th>@Html.DisplayNameFor(model => model.Vl_Dizimo)</th>
+            <th>Ação</th>
+        </tr>
+    </thead>
+    <tfoot>
+        <tr>
+            <th>@Html.DisplayNameFor(model => model.Id_Dizimo)</th>
+            <th>@Html.DisplayNameFor(model => model.Membros.Nome)</th>
+            <th>@Html.DisplayNameFor(model => model.Mes_Ref)</th>
+            <th>@Html.DisplayNameFor(model => model.Dt_Mov)</th>
+            <th>@Html.DisplayNameFor(model => model.Vl_Dizimo)</th>
+            <th>Ação</th>
+        </tr>
+    </tfoot>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@Html.DisplayFor(modelItem => item.Id_Dizimo)</td>
+                <td>@Html.DisplayFor(modelItem => item.Membros.Nome)</td>
+                <td>@Html.DisplayFor(modelItem => item.Mes_Ref)</td>
+                <td>@Html.DisplayFor(modelItem => item.Dt_Mov)</td>
+                <td>@Html.DisplayFor(modelItem => item.Vl_Dizimo)</td>
+                <td>
+                    @Html.ActionLink(" ", "Editar", new { id = item.Id_Dizimo }, new { @class = "glyphicon glyphicon-edit", @title = "Editar" }) |
+                    @*@Html.ActionLink(" ", "Detalhes", new { id = item.Id_Dizimo }, new { @class = "glyphicon glyphicon-list", @title = "Detalhes" }) |*@
+                    @Html.ActionLink(" ", "Deletar", new { id = item.Id_Dizimo }, new { @class = "glyphicon glyphicon-trash", @title = "Deletar" })
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+@section Scripts {
+    @Styles.Render("~/Content/Shared/DataTable/dataTables.bootstrap.min.css")
+    @Scripts.Render("~/Scripts/Shared/DataTable/jquery-1.12.4.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/jquery.dataTables.min.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/dataTables.bootstrap.min.js")
+    @Scripts.Render("~/Scripts/Shared/DataTable/superTable.js")
+}
+
+

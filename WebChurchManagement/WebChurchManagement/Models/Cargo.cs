@@ -25,6 +25,7 @@ namespace WebChurchManagement.Models
         }
 
         [Key]
+        [DisplayName("Id Cargo")]
         public int Id_Cargo { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(30, ErrorMessage = "Campo deve conter no máximo 30 caracteres.")]

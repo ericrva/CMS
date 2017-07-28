@@ -47,7 +47,7 @@ namespace WebChurchManagement.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Inserir")]
-        public ActionResult Create([Bind(Include = "Id_Disc,Id_Memb,Motivo,Dt_Ini,Dt_Fim")] Disciplina disciplina)
+        public ActionResult Create([Bind(Include = "Id_Disc,Id_Membros,Motivo,Dt_Ini,Dt_Fim")] Disciplina disciplina)
         {
             if (ModelState.IsValid)
             {
@@ -81,7 +81,7 @@ namespace WebChurchManagement.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [Route("Editar/{id}")]
-        public ActionResult Edit([Bind(Include = "Id_Disc,Id_Memb,Motivo,Dt_Ini,Dt_Fim")] Disciplina disciplina)
+        public ActionResult Edit([Bind(Include = "Id_Disc,Id_Membros,Motivo,Dt_Ini,Dt_Fim")] Disciplina disciplina)
         {
             if (ModelState.IsValid)
             {
