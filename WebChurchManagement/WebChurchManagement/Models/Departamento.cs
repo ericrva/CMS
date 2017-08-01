@@ -21,7 +21,7 @@ namespace WebChurchManagement.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Departamento()
         {
-            this.Principal = true;
+            this.Principal = false;
             this.Ativo = true;
             this.Agendas = new HashSet<Agenda>();
             this.Lancamentos = new HashSet<Lancamento>();
@@ -30,15 +30,20 @@ namespace WebChurchManagement.Models
         }
 
         [Key]
+        [DisplayName("Id Departamento")]
         public int Id_Deptos { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(30, ErrorMessage = "Campo deve conter no máximo 30 caracteres.")]
+        [DisplayName("Departamento")]
         public string Nm_Deptos { get; set; }
-        [DefaultValue(true)]
+        [DefaultValue(false)]
         public bool Principal { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }
-        public int IdMembros { get; set; }
+        [DisplayName("Líder")]
+        public int Id_Membros { get; set; }
+
+        public virtual Membro Membros { get; set; }
 
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Agenda> Agendas { get; set; }

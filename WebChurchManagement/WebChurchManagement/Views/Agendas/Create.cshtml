@@ -1,0 +1,66 @@
+﻿@model WebChurchManagement.Models.Agenda
+
+@{
+    ViewBag.Title = "Agendar";
+}
+
+@using (Html.BeginForm("Inserir", "Agendas", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+
+    <div class="form-horizontal">
+
+        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+        <div class="form-group">
+            @Html.LabelFor(model => model.Departamentos.Nm_Deptos, "Departamento", htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.DropDownList("Id_Deptos", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Departamentos.Nm_Deptos, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Dt_Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Dt_Agenda, new { htmlAttributes = new { @class = "dateTimePicker", @readonly = "readonly" } })
+                <span class="glyphicon glyphicon-calendar" aria-hidden="true"></span>
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Evento, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.Evento, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.ValidationMessageFor(model => model.Evento, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            @Html.LabelFor(model => model.Desc_Agenda, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                @Html.TextAreaFor(model => model.Desc_Agenda, new { htmlAttributes = new { @class = "form-control", @rows = "8" } })
+                @Html.ValidationMessageFor(model => model.Desc_Agenda, "", new { @class = "text-danger" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input type="submit" value="Salvar" class="btn btn-success" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Volta à lista", "Index")
+</div>
+
+@section Scripts {
+    @Styles.Render("~/Content/Agendas/agendasCreateEdit.css")
+    @Styles.Render("~/Content/Shared/DateTimePicker/bootstrap-datepicker3.min.css")
+    @Styles.Render("~/Content/Shared/DateTimePicker/bootstrap-datepicker3.standalone.min.css")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/Scripts/Shared/DateTimePicker/bootstrap-datepicker.min.js")
+    @Scripts.Render("~/Scripts/Shared/DateTimePicker/dateTimePicker.js")
+    @Scripts.Render("~/Scripts/Shared/DateTimePicker/locales/bootstrap-datepicker.pt-BR.min.js")
+}

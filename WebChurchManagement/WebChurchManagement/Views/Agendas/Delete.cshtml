@@ -1,0 +1,37 @@
+﻿@model WebChurchManagement.Models.Agenda
+
+@{
+    ViewBag.Title = "Deletar Agenda";
+}
+
+<h3>Você tem certeza que deseja deletar esse registro?</h3>
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>@Html.DisplayNameFor(model => model.Id_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Id_Agenda)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Departamentos.Nm_Deptos)</dt>
+        <dd>@Html.DisplayFor(model => model.Departamentos.Nm_Deptos)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Dt_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Agenda)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Evento)</dt>
+        <dd>@Html.DisplayFor(model => model.Evento)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Desc_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Desc_Agenda)</dd>
+
+    </dl>
+
+    @using (Html.BeginForm("Deletar", "Agendas", new { id = Model.Id_Agenda }, FormMethod.Post))
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Deletar" class="btn btn-danger" /> |
+            @Html.ActionLink("Voltar à lista", "Index")
+        </div>
+    }
+</div>

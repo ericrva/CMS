@@ -1,0 +1,31 @@
+﻿@model WebChurchManagement.Models.Agenda
+
+@{
+    ViewBag.Title = "Detalhes Agenda";
+}
+<div>
+    <dl class="dl-horizontal">
+
+        <dt>@Html.DisplayNameFor(model => model.Id_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Id_Agenda)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Departamentos.Nm_Deptos)</dt>
+        <dd>@Html.DisplayFor(model => model.Departamentos.Nm_Deptos)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Dt_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Agenda)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Evento)</dt>
+        <dd>@Html.DisplayFor(model => model.Evento)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Desc_Agenda)</dt>
+        <dd>@Html.DisplayFor(model => model.Desc_Agenda)</dd>
+
+    </dl>
+
+</div>
+
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id_Agenda }) |
+    @Html.ActionLink("Voltar à lista", "Index")
+</p>

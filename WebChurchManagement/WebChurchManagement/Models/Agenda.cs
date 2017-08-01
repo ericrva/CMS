@@ -13,20 +13,25 @@ namespace WebChurchManagement.Models
     using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
+    using System.ComponentModel;
 
     [Table("Agendas")]
     public partial class Agenda
     {
         [Key]
+        [DisplayName("Id Agenda")]
         public int Id_Agenda { get; set; }
+        [DisplayName("Departamento")]
         public int Id_Deptos { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
+        [DisplayName("Data")]
+        [DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:dd/MM/yyyy}", HtmlEncode = true)]
         public DateTime Dt_Agenda { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(30, ErrorMessage = "Campo deve conter no máximo 30 caracteres.")]
         public string Evento { get; set; }
-        [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(150, ErrorMessage = "Campo deve conter no máximo 150 caracteres.")]
+        [DisplayName("Descrição")]
         public string Desc_Agenda { get; set; }
 
         public virtual Departamento Departamentos { get; set; }

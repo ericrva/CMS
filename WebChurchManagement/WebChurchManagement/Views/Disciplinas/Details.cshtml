@@ -1,58 +1,31 @@
 ﻿@model WebChurchManagement.Models.Disciplina
 
 @{
-    Layout = null;
+    ViewBag.Title = "Detalhes da Disciplina";
 }
 
-<!DOCTYPE html>
+<div>
+    <dl class="dl-horizontal">
 
-<html>
-<head>
-    <meta name="viewport" content="width=device-width" />
-    <title>Details</title>
-</head>
-<body>
-    <div>
-        <h4>Disciplina</h4>
-        <hr />
-        <dl class="dl-horizontal">
-            <dt>
-                @Html.DisplayNameFor(model => model.Membros.Nome)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Membros.Nome)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Motivo)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Motivo)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Dt_Ini)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Dt_Ini)
-            </dd>
-    
-            <dt>
-                @Html.DisplayNameFor(model => model.Dt_Fim)
-            </dt>
-    
-            <dd>
-                @Html.DisplayFor(model => model.Dt_Fim)
-            </dd>
-    
-        </dl>
-    </div>
-    <p>
-        @Html.ActionLink("Edit", "Edit", new { id = Model.Id_Disc }) |
-        @Html.ActionLink("Back to List", "Index")
-    </p>
-</body>
-</html>
+        <dt>@Html.DisplayNameFor(model => model.Id_Disc)</dt>
+        <dd>@Html.DisplayFor(model => model.Id_Disc)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Membros.Nome)</dt>
+        <dd>@Html.DisplayFor(model => model.Membros.Nome)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Dt_Ini)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Ini)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Dt_Fim)</dt>
+        <dd>@Html.DisplayFor(model => model.Dt_Fim)</dd>
+
+        <dt>@Html.DisplayNameFor(model => model.Motivo)</dt>
+        <dd>@Html.DisplayFor(model => model.Motivo)</dd>
+
+    </dl>
+</div>
+
+<p>
+    @Html.ActionLink("Editar", "Editar", new { id = Model.Id_Disc }) |
+    @Html.ActionLink("Voltar à lista", "Index")
+</p>

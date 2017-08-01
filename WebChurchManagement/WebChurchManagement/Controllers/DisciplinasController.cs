@@ -38,6 +38,7 @@ namespace WebChurchManagement.Controllers
         [Route("Inserir")]
         public ActionResult Create()
         {
+            ViewBag.Id_Membros = new SelectList(db.Membros.ToList(), "Id_Membros", "Nome");
             return View();
         }
 
@@ -72,6 +73,7 @@ namespace WebChurchManagement.Controllers
             {
                 return HttpNotFound();
             }
+            ViewBag.Id_Membros = new SelectList(db.Membros.ToList(), "Id_Membros", "Nome", disciplina.Id_Membros);
             return View(disciplina);
         }
 

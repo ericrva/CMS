@@ -1,37 +1,37 @@
 ﻿@model WebChurchManagement.Models.Dizimo
 
-@{
-    ViewBag.Title = "Deletar Dízimo";
-}
-
-<h3>Você tem certeza que deseja deletar esse registro?</h3>
-<div>
-    <dl class="dl-horizontal">
-
-        <dt>@Html.DisplayNameFor(model => model.Id_Dizimo)</dt>
-        <dd>@Html.DisplayFor(model => model.Id_Dizimo)</dd>
-
-        <dt>@Html.DisplayNameFor(model => model.Membros.Nome)</dt>
-        <dd>@Html.DisplayFor(model => model.Membros.Nome)</dd>
-
-        <dt>@Html.DisplayNameFor(model => model.Mes_Ref)</dt>
-        <dd>@Html.DisplayFor(model => model.Mes_Ref)</dd>
-
-        <dt>@Html.DisplayNameFor(model => model.Dt_Mov)</dt>
-        <dd>@Html.DisplayFor(model => model.Dt_Mov)</dd>
-
-        <dt>@Html.DisplayNameFor(model => model.Vl_Dizimo)</dt>
-        <dd>@Html.DisplayFor(model => model.Vl_Dizimo)</dd>
-
-    </dl>
-
-    @using (Html.BeginForm("Deletar", "Dizimos", new { id = Model.Id_Dizimo }, FormMethod.Post))
-    {
-        @Html.AntiForgeryToken()
-
-        <div class="form-actions no-color">
-            <input type="submit" value="Deletar" class="btn btn-danger" /> |
-            @Html.ActionLink("Voltar à lista", "Index")
-        </div>
+    @{
+        ViewBag.Title = "Deletar Dízimo";
     }
-</div>
+
+    <h3>Você tem certeza que deseja deletar esse registro?</h3>
+    <div>
+        <dl class="dl-horizontal">
+
+            <dt>@Html.DisplayNameFor(model => model.Id_Dizimo)</dt>
+            <dd>@Html.DisplayFor(model => model.Id_Dizimo)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Membros.Nome)</dt>
+            <dd>@Html.DisplayFor(model => model.Membros.Nome)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Mes_Ref)</dt>
+            <dd>@Html.DisplayFor(model => model.Mes_Ref)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Dt_Mov)</dt>
+            <dd>@Html.DisplayFor(model => model.Dt_Mov)</dd>
+
+            <dt>@Html.DisplayNameFor(model => model.Vl_Dizimo)</dt>
+            <dd>@Html.DisplayFor(model => model.Vl_Dizimo)</dd>
+
+        </dl>
+
+        @using (Html.BeginForm("Deletar", "Dizimos", new { id = Model.Id_Dizimo }, FormMethod.Post))
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-actions no-color">
+                <input type="submit" value="Deletar" class="btn btn-danger" /> |
+                @Html.ActionLink("Voltar à lista", "Index")
+            </div>
+        }
+    </div>

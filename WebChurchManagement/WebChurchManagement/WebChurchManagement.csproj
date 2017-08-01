@@ -192,7 +192,9 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\AgendasController.cs" />
     <Compile Include="Controllers\CargosController.cs" />
+    <Compile Include="Controllers\DepartamentosController.cs" />
     <Compile Include="Controllers\DisciplinasController.cs" />
     <Compile Include="Controllers\DizimosController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
@@ -228,10 +230,13 @@
     <Content Include="App_Data\WebChurchManagementDB_log.ldf">
       <DependentUpon>WebChurchManagementDB.mdf</DependentUpon>
     </Content>
+    <Content Include="Content\Agendas\agendasCreateEdit.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Departamentos\departamentosCreateEdit.css" />
+    <Content Include="Content\Disciplinas\disciplinasCreateEdit.css" />
     <Content Include="Content\Dizimos\dizimosCreateEdit.css" />
     <Content Include="Content\Membros\membrosCreateEdit.css" />
     <Content Include="Content\Membros\membrosDetailsDelete.css" />
@@ -418,6 +423,16 @@
     <Content Include="Views\Dizimos\Details.cshtml" />
     <Content Include="Views\Dizimos\Edit.cshtml" />
     <Content Include="Views\Dizimos\Index.cshtml" />
+    <Content Include="Views\Departamentos\Create.cshtml" />
+    <Content Include="Views\Departamentos\Delete.cshtml" />
+    <Content Include="Views\Departamentos\Details.cshtml" />
+    <Content Include="Views\Departamentos\Edit.cshtml" />
+    <Content Include="Views\Departamentos\Index.cshtml" />
+    <Content Include="Views\Agendas\Create.cshtml" />
+    <Content Include="Views\Agendas\Delete.cshtml" />
+    <Content Include="Views\Agendas\Details.cshtml" />
+    <Content Include="Views\Agendas\Edit.cshtml" />
+    <Content Include="Views\Agendas\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
