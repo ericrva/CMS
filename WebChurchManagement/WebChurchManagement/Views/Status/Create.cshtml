@@ -10,6 +10,16 @@
 
     <div class="form-horizontal">
 
+        <div class="form-group">
+            @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
+            <div class="col-md-10">
+                <div class="checkbox">
+                    @Html.EditorFor(model => model.Ativo)
+                    @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
+                </div>
+            </div>
+        </div>
+
         @Html.ValidationSummary(true, "", new { @class = "text-danger" })
         <div class="form-group">
             @Html.LabelFor(model => model.Nm_Status, htmlAttributes: new { @class = "control-label col-md-2" })
@@ -24,16 +34,6 @@
             <div class="col-md-10">
                 @Html.EditorFor(model => model.Desc_Status, new { htmlAttributes = new { @class = "form-control" } })
                 @Html.ValidationMessageFor(model => model.Desc_Status, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            @Html.LabelFor(model => model.Ativo, htmlAttributes: new { @class = "control-label col-md-2" })
-            <div class="col-md-10">
-                <div class="checkbox">
-                    @Html.EditorFor(model => model.Ativo)
-                    @Html.ValidationMessageFor(model => model.Ativo, "", new { @class = "text-danger" })
-                </div>
             </div>
         </div>
 

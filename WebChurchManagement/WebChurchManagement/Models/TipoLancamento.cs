@@ -25,9 +25,11 @@ namespace WebChurchManagement.Models
         }
 
         [Key]
+        [DisplayName("Id")]
         public int Id_Tpo_Lanc { get; set; }
         [Required(ErrorMessage = "Campo não pode ser nulo.")]
         [MaxLength(15, ErrorMessage = "Campo deve conter no máximo 15 caracteres.")]
+        [DisplayName("Descrição")]
         public string Desc_Lanc { get; set; }
         [DefaultValue(true)]
         public bool Ativo { get; set; }

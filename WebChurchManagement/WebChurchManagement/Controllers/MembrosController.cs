@@ -41,8 +41,8 @@ namespace WebChurchManagement.Controllers
         [Route("Inserir")]
         public ActionResult Create()
         {
-            ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome");
-            ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status");
+            ViewBag.Id_Cargo = new SelectList(db.Cargos.Where(c => c.Ativo), "Id_Cargo", "Nome");
+            ViewBag.Id_Status = new SelectList(db.Status.Where(s => s.Ativo), "Id_Status", "Nm_Status");
             ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)));
             ViewBag.Matricula = Convert.ToInt32(db.Membros.Max(m => m.Matricula)) + 1;
             return View();
@@ -65,9 +65,6 @@ namespace WebChurchManagement.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
-            ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
-            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
             return View(membro);
         }
 
@@ -84,8 +81,8 @@ namespace WebChurchManagement.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
-            ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
+            ViewBag.Id_Cargo = new SelectList(db.Cargos.Where(c => c.Ativo), "Id_Cargo", "Nome", membro.Id_Cargo);
+            ViewBag.Id_Status = new SelectList(db.Status.Where(s => s.Ativo), "Id_Status", "Nm_Status", membro.Id_Status);
             ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
             return View(membro);
         }
@@ -106,9 +103,7 @@ namespace WebChurchManagement.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id_Cargo = new SelectList(db.Cargos, "Id_Cargo", "Nome", membro.Id_Cargo);
-            ViewBag.Id_Status = new SelectList(db.Status, "Id_Status", "Nm_Status", membro.Id_Status);
-            ViewBag.Uf = new SelectList(Enum.GetValues(typeof(EnumUF)), membro.Uf);
+            
             return View(membro);
         }
 

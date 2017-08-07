@@ -42,7 +42,7 @@ namespace WebChurchManagement.Controllers
         [Route("Inserir")]
         public ActionResult Create()
         {
-            ViewBag.Id_Deptos = new SelectList(db.Departamentos, "Id_Deptos", "Nm_Deptos");
+            ViewBag.Id_Deptos = new SelectList(db.Departamentos.Where(d => d.Ativo), "Id_Deptos", "Nm_Deptos");
             return View();
         }
 
@@ -61,7 +61,6 @@ namespace WebChurchManagement.Controllers
                 return RedirectToAction("Index");
             }
 
-            ViewBag.Id_Deptos = new SelectList(db.Departamentos, "Id_Deptos", "Nm_Deptos", agenda.Id_Deptos);
             return View(agenda);
         }
 
@@ -78,7 +77,7 @@ namespace WebChurchManagement.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.Id_Deptos = new SelectList(db.Departamentos, "Id_Deptos", "Nm_Deptos", agenda.Id_Deptos);
+            ViewBag.Id_Deptos = new SelectList(db.Departamentos.Where(d => d.Ativo), "Id_Deptos", "Nm_Deptos", agenda.Id_Deptos);
             return View(agenda);
         }
 
@@ -96,7 +95,7 @@ namespace WebChurchManagement.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.Id_Deptos = new SelectList(db.Departamentos, "Id_Deptos", "Nm_Deptos", agenda.Id_Deptos);
+
             return View(agenda);
         }
 

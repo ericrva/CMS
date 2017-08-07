@@ -201,6 +201,7 @@
     <Compile Include="Controllers\ManageController.cs" />
     <Compile Include="Controllers\MembrosController.cs" />
     <Compile Include="Controllers\StatusController.cs" />
+    <Compile Include="Controllers\TiposLancamentoController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -235,7 +236,6 @@
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.min.css" />
-    <Content Include="Content\Departamentos\departamentosCreateEdit.css" />
     <Content Include="Content\Disciplinas\disciplinasCreateEdit.css" />
     <Content Include="Content\Dizimos\dizimosCreateEdit.css" />
     <Content Include="Content\Membros\membrosCreateEdit.css" />
@@ -433,6 +433,11 @@
     <Content Include="Views\Agendas\Details.cshtml" />
     <Content Include="Views\Agendas\Edit.cshtml" />
     <Content Include="Views\Agendas\Index.cshtml" />
+    <Content Include="Views\TiposLancamento\Create.cshtml" />
+    <Content Include="Views\TiposLancamento\Delete.cshtml" />
+    <Content Include="Views\TiposLancamento\Details.cshtml" />
+    <Content Include="Views\TiposLancamento\Edit.cshtml" />
+    <Content Include="Views\TiposLancamento\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
